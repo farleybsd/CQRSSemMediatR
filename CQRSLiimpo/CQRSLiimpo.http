@@ -1,0 +1,6 @@
+@CQRSLiimpo_HostAddress = http://localhost:5296
+
+GET {{CQRSLiimpo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
