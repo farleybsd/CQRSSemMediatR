@@ -1,7 +1,4 @@
 ﻿using CQRSLiimpo.Application.Request;
-using CQRSLiimpo.Application.Response;
-using CQRSLiimpo.Domain.Command;
-using CQRSLiimpo.Domain.Entities;
 using CQRSLiimpo.Domain.Queries;
 using CQRSLiimpo.Domain.Repositories;
 

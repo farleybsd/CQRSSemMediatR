@@ -1,5 +1,4 @@
-﻿
-namespace CQRSLiimpo.Controllers
+﻿namespace CQRSLiimpo.Controllers
 {
     public class GetUserByIdQuery
     {

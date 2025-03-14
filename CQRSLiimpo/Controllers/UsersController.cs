@@ -1,13 +1,9 @@
 ﻿using CQRSLiimpo.Application.Request;
 using CQRSLiimpo.Application.Response;
-using CQRSLiimpo.Dispatchers.Command;
 using CQRSLiimpo.Domain.Dispatcher.Command;
 using CQRSLiimpo.Domain.Dispatcher.Query;
 using CQRSLiimpo.Domain.Entities;
-using CQRSLiimpo.Handlers.Commands;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Threading;
 
 namespace CQRSLiimpo.Controllers
 {
@@ -64,7 +60,6 @@ namespace CQRSLiimpo.Controllers
         [HttpDelete]
         public async Task<ActionResult<string>> Delete(DeleteUserRequest deleteUserRequest, CancellationToken cancellationToken)
         {
-            
             var messegeResult = await _queryDispatcher.DispatchDelete<DeleteUserRequest, string>(deleteUserRequest, cancellationToken);
 
             if (messegeResult == null)
@@ -94,6 +89,5 @@ namespace CQRSLiimpo.Controllers
                 return StatusCode(500, new { message = "Erro interno ao processar a solicitação.", error = ex.Message });
             }
         }
-
     }
 }

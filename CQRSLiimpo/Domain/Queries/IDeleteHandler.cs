@@ -4,5 +4,4 @@
     {
         Task<TQueryResult> Handle(Tquery query, CancellationToken cancellation);
     }
-
 }

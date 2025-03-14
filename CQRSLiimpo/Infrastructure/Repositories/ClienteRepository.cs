@@ -12,7 +12,7 @@ namespace CQRSLiimpo.Infrastructure.Repositories
         {
             cliente.Id = _clientes.Count + 1;
             _clientes.Add(cliente);
-            return await Task.FromResult(cliente); 
+            return await Task.FromResult(cliente);
         }
 
         public async Task DeleteAsync(int id)
@@ -27,7 +27,7 @@ namespace CQRSLiimpo.Infrastructure.Repositories
 
         public async Task<IEnumerable<User>> GetAllAsync()
         {
-            return await Task.FromResult(_clientes.ToList()); 
+            return await Task.FromResult(_clientes.ToList());
         }
 
         public async Task<User?> GetByIdAsync(int id)
@@ -39,7 +39,7 @@ namespace CQRSLiimpo.Infrastructure.Repositories
                 throw new ClienteNotFoundException(id);
             }
 
-            return await Task.FromResult(cliente); 
+            return await Task.FromResult(cliente);
         }
 
         public async Task UpdateAsync(User cliente)
@@ -51,6 +51,7 @@ namespace CQRSLiimpo.Infrastructure.Repositories
                 existingCliente.Email = cliente.Email;
             }
         }
+
         public async Task<bool> ExistsAsync(int id)
         {
             return await Task.FromResult(_clientes.Any(c => c.Id == id));

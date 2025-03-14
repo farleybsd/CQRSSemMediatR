@@ -17,8 +17,7 @@ namespace CQRSLiimpo.Handlers.Commands
 
         public async Task<CreateUserResponse> Handle(CreateUserRequest command, CancellationToken cancellation)
         {
-            
-          var result = await _clienteRepository.AddAsync(new User() { Email = command.Email, Nome = command.Nome });
+            var result = await _clienteRepository.AddAsync(new User() { Email = command.Email, Nome = command.Nome });
             return new CreateUserResponse() { Id = result.Id, Email = result.Email, Nome = result.Nome };
         }
     }

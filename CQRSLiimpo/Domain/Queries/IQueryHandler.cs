@@ -5,8 +5,8 @@
      *  tipo TQuery e um token de cancelamento, e retorna uma Taskrepresentando o resultado da operação de consulta.
      */
 
-    public interface IQueryHandler <in Tquery, TQueryResult>
+    public interface IQueryHandler<in Tquery, TQueryResult>
     {
-        Task<TQueryResult> Handle(Tquery query,CancellationToken cancellation);
+        Task<TQueryResult> Handle(Tquery query, CancellationToken cancellation);
     }
 }

@@ -32,7 +32,6 @@ builder.Services.AddScoped<IQueryGetAllHandler<IEnumerable<CreateUserResponse>>,
 builder.Services.AddScoped<IDeleteHandler<DeleteUserRequest, string>, DeleteUserCommandHandler>();
 builder.Services.AddScoped<ICommandHandler<UpdateUserRequest, CreateUserResponse>, UpdateUserCommandHandler>();
 
-
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

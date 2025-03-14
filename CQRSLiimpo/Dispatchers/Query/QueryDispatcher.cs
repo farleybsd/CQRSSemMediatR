@@ -7,6 +7,7 @@ namespace CQRSLiimpo.Dispatchers.Query
     public class QueryDispatcher(IServiceProvider serviceProvider) : IQueryDispatcher
     {
         private readonly IServiceProvider _serviceProvider = serviceProvider;
+
         public Task<TQueryResult> Dispatch<TQuery, TQueryResult>(TQuery query, CancellationToken cancellation)
         {
             var handler = _serviceProvider.GetRequiredService<IQueryHandler<TQuery, TQueryResult>>();
@@ -22,7 +23,7 @@ namespace CQRSLiimpo.Dispatchers.Query
         public async Task<TQueryResult> DispatchDelete<TQuery, TQueryResult>(TQuery query, CancellationToken cancellation)
         {
             var handler = _serviceProvider.GetRequiredService<IDeleteHandler<TQuery, TQueryResult>>();
-            return await handler.Handle(query,cancellation);
+            return await handler.Handle(query, cancellation);
         }
     }
 }
