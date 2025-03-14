@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CQRSLiimpo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71dbab832786b59043096ad4022a6241a3794be9")]
 [assembly: System.Reflection.AssemblyProductAttribute("CQRSLiimpo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CQRSLiimpo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

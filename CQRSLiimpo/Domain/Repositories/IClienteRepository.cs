@@ -4,10 +4,10 @@ namespace CQRSLiimpo.Domain.Repositories
 {
     public interface IClienteRepository
     {
-        void Add(User cliente);
-        User GetById(int id);
-        IEnumerable<User> GetAll();
-        void Update(User cliente);
-        void Delete(int id);
+        Task<User> AddAsync(User cliente);
+        Task<User?> GetByIdAsync(int id);
+        Task<IEnumerable<User>> GetAllAsync();
+        Task UpdateAsync(User cliente);
+        Task DeleteAsync(int id);
     }
 }

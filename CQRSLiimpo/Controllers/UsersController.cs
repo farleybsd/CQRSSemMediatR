@@ -1,7 +1,12 @@
-﻿using CQRSLiimpo.Domain.Dispatcher.Command;
+﻿using CQRSLiimpo.Application.Request;
+using CQRSLiimpo.Application.Response;
+using CQRSLiimpo.Dispatchers.Command;
+using CQRSLiimpo.Domain.Dispatcher.Command;
 using CQRSLiimpo.Domain.Dispatcher.Query;
 using CQRSLiimpo.Domain.Entities;
+using CQRSLiimpo.Handlers.Commands;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading;
 
 namespace CQRSLiimpo.Controllers
 {
@@ -25,5 +30,22 @@ namespace CQRSLiimpo.Controllers
 
             return Ok(user);
         }
+
+        [HttpPost]
+        public async Task<ActionResult<CreateUserResponse>> CriarProduto([FromBody] CreateUserRequest createUser, CancellationToken cancellationToken)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var createUserResponse = await _commandDispatcher.Dispatch<CreateUserRequest, CreateUserResponse>(createUser, cancellationToken);
+
+            return CreatedAtAction(nameof(CriarProduto), new CreateUserResponse()
+            {
+                Id = createUserResponse.Id,
+                Email = createUserResponse.Email,
+                Nome = createUserResponse.Nome
+            });
+        }
+
     }
 }

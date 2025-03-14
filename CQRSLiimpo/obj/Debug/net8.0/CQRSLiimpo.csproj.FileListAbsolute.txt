@@ -30,3 +30,4 @@ C:\Git\CQRSSemMediatR\CQRSLiimpo\obj\Debug\net8.0\refint\CQRSLiimpo.dll
 C:\Git\CQRSSemMediatR\CQRSLiimpo\obj\Debug\net8.0\CQRSLiimpo.pdb
 C:\Git\CQRSSemMediatR\CQRSLiimpo\obj\Debug\net8.0\CQRSLiimpo.genruntimeconfig.cache
 C:\Git\CQRSSemMediatR\CQRSLiimpo\obj\Debug\net8.0\ref\CQRSLiimpo.dll
+C:\Git\CQRSSemMediatR\CQRSLiimpo\obj\Debug\net8.0\CQRSLiimpo.sourcelink.json

@@ -4,20 +4,20 @@ using CQRSLiimpo.Infrastructure.Exceptions;
 
 namespace CQRSLiimpo.Infrastructure.Repositories
 {
-    public class ClienteRepository
+    public class ClienteRepository : IClienteRepository
     {
+        private static List<User> _clientes = new();
 
-        private readonly List<User> _clientes = new();
-
-        public void Add(User cliente)
+        public async Task<User> AddAsync(User cliente)
         {
             cliente.Id = _clientes.Count + 1;
             _clientes.Add(cliente);
+            return await Task.FromResult(cliente); 
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            var cliente = GetById(id);
+            var cliente = await GetByIdAsync(id);
 
             if (cliente != null)
             {
@@ -25,12 +25,12 @@ namespace CQRSLiimpo.Infrastructure.Repositories
             }
         }
 
-        public IEnumerable<User> GetAll()
+        public async Task<IEnumerable<User>> GetAllAsync()
         {
-            return _clientes.ToList();
+            return await Task.FromResult(_clientes.ToList()); 
         }
 
-        public User GetById(int id)
+        public async Task<User?> GetByIdAsync(int id)
         {
             var cliente = _clientes.FirstOrDefault(c => c.Id == id);
 
@@ -39,12 +39,12 @@ namespace CQRSLiimpo.Infrastructure.Repositories
                 throw new ClienteNotFoundException(id);
             }
 
-            return cliente;
+            return await Task.FromResult(cliente); 
         }
 
-        public void Update(User cliente)
+        public async Task UpdateAsync(User cliente)
         {
-            var existingCliente = GetById(cliente.Id);
+            var existingCliente = await GetByIdAsync(cliente.Id);
             if (existingCliente != null)
             {
                 existingCliente.Nome = cliente.Nome;
