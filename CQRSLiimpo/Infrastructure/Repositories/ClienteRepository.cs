@@ -51,5 +51,9 @@ namespace CQRSLiimpo.Infrastructure.Repositories
                 existingCliente.Email = cliente.Email;
             }
         }
+        public async Task<bool> ExistsAsync(int id)
+        {
+            return await Task.FromResult(_clientes.Any(c => c.Id == id));
+        }
     }
 }

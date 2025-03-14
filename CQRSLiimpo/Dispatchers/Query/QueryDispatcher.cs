@@ -19,6 +19,10 @@ namespace CQRSLiimpo.Dispatchers.Query
             return await handler.Handle(cancellation);
         }
 
-       
+        public async Task<TQueryResult> DispatchDelete<TQuery, TQueryResult>(TQuery query, CancellationToken cancellation)
+        {
+            var handler = _serviceProvider.GetRequiredService<IDeleteHandler<TQuery, TQueryResult>>();
+            return await handler.Handle(query,cancellation);
+        }
     }
 }

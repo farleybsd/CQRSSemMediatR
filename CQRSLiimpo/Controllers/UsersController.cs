@@ -61,6 +61,18 @@ namespace CQRSLiimpo.Controllers
             return Ok(createUserRequest);
         }
 
+        [HttpDelete]
+        public async Task<ActionResult<string>> Delete(DeleteUserRequest deleteUserRequest, CancellationToken cancellationToken)
+        {
+            
+            var messegeResult = await _queryDispatcher.DispatchDelete<DeleteUserRequest, string>(deleteUserRequest, cancellationToken);
+
+            if (messegeResult == null)
+            {
+                return NotFound();
+            }
+            return messegeResult;
+        }
 
     }
 }

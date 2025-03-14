@@ -12,5 +12,6 @@ namespace CQRSLiimpo.Domain.Dispatcher.Query
     {
         Task<TQueryResult> Dispatch<TQuery, TQueryResult>(TQuery query, CancellationToken cancellation);
         Task<IEnumerable<CreateUserResponse>> DispatchAll(CancellationToken cancellation);
+        Task<TQueryResult> DispatchDelete<TQuery, TQueryResult>(TQuery query, CancellationToken cancellation);
     }
 }

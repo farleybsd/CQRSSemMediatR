@@ -9,5 +9,6 @@ namespace CQRSLiimpo.Domain.Repositories
         Task<IEnumerable<User>> GetAllAsync();
         Task UpdateAsync(User cliente);
         Task DeleteAsync(int id);
+        Task<bool> ExistsAsync(int id);
     }
 }
