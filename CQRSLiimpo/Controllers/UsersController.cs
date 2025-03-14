@@ -6,6 +6,7 @@ using CQRSLiimpo.Domain.Dispatcher.Query;
 using CQRSLiimpo.Domain.Entities;
 using CQRSLiimpo.Handlers.Commands;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace CQRSLiimpo.Controllers
@@ -46,6 +47,20 @@ namespace CQRSLiimpo.Controllers
                 Nome = createUserResponse.Nome
             });
         }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CreateUserResponse>>> BuscarTodosClientes(CancellationToken cancellationToken)
+        {
+            var createUserRequest = await _queryDispatcher.DispatchAll(cancellationToken);
+
+            if (createUserRequest == null || !createUserRequest.Any())
+            {
+                return NotFound();
+            }
+
+            return Ok(createUserRequest);
+        }
+
 
     }
 }

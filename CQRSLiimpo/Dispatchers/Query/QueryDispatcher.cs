@@ -1,4 +1,5 @@
-﻿using CQRSLiimpo.Domain.Dispatcher.Query;
+﻿using CQRSLiimpo.Application.Response;
+using CQRSLiimpo.Domain.Dispatcher.Query;
 using CQRSLiimpo.Domain.Queries;
 
 namespace CQRSLiimpo.Dispatchers.Query
@@ -11,5 +12,13 @@ namespace CQRSLiimpo.Dispatchers.Query
             var handler = _serviceProvider.GetRequiredService<IQueryHandler<TQuery, TQueryResult>>();
             return handler.Handle(query, cancellation);
         }
+
+        public async Task<IEnumerable<CreateUserResponse>> DispatchAll(CancellationToken cancellation)
+        {
+            var handler = _serviceProvider.GetRequiredService<IQueryGetAllHandler<IEnumerable<CreateUserResponse>>>();
+            return await handler.Handle(cancellation);
+        }
+
+       
     }
 }

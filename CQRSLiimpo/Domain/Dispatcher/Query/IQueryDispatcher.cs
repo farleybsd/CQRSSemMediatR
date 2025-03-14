@@ -1,4 +1,7 @@
-﻿namespace CQRSLiimpo.Domain.Dispatcher.Query
+﻿using CQRSLiimpo.Application.Response;
+using System.Threading.Tasks;
+
+namespace CQRSLiimpo.Domain.Dispatcher.Query
 {
     /*
      * Esta interface é responsável por despachar consultas para seus respectivos manipuladores de consulta. 
@@ -8,5 +11,6 @@
     public interface IQueryDispatcher
     {
         Task<TQueryResult> Dispatch<TQuery, TQueryResult>(TQuery query, CancellationToken cancellation);
+        Task<IEnumerable<CreateUserResponse>> DispatchAll(CancellationToken cancellation);
     }
 }

@@ -11,6 +11,7 @@ using CQRSLiimpo.Domain.Queries;
 using CQRSLiimpo.Domain.Repositories;
 using CQRSLiimpo.Handlers;
 using CQRSLiimpo.Handlers.Commands;
+using CQRSLiimpo.Handlers.Queries;
 using CQRSLiimpo.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +26,8 @@ builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 // Registro do QueryHandler
 builder.Services.AddScoped<IQueryHandler<GetUserByIdQuery, User>, GetUserByIdQueryHandler>();
 builder.Services.AddScoped<ICommandHandler<CreateUserRequest, CreateUserResponse>, CreateUserCommandHandler>();
+// Registro do QueryHandlerAll
+builder.Services.AddScoped<IQueryGetAllHandler<IEnumerable<CreateUserResponse>>, GetUserAllQueryHandler>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
