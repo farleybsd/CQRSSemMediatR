@@ -33,14 +33,14 @@ namespace CQRSLiimpo.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<CreateUserResponse>> CriarProduto([FromBody] CreateUserRequest createUser, CancellationToken cancellationToken)
+        public async Task<ActionResult<CreateUserResponse>> CriarCliente([FromBody] CreateUserRequest createUser, CancellationToken cancellationToken)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             var createUserResponse = await _commandDispatcher.Dispatch<CreateUserRequest, CreateUserResponse>(createUser, cancellationToken);
 
-            return CreatedAtAction(nameof(CriarProduto), new CreateUserResponse()
+            return CreatedAtAction(nameof(CriarCliente), new CreateUserResponse()
             {
                 Id = createUserResponse.Id,
                 Email = createUserResponse.Email,
@@ -72,6 +72,27 @@ namespace CQRSLiimpo.Controllers
                 return NotFound();
             }
             return messegeResult;
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> AlterarCliente([FromBody] UpdateUserRequest updateUserRequest, CancellationToken cancellationToken)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(new ValidationProblemDetails(ModelState));
+
+            try
+            {
+                var createUserResponse = await _commandDispatcher.Dispatch<UpdateUserRequest, CreateUserResponse>(updateUserRequest, cancellationToken);
+
+                if (createUserResponse is null)
+                    return NotFound("Usuário não encontrado ou não foi possível atualizar.");
+
+                return Ok(createUserResponse);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Erro interno ao processar a solicitação.", error = ex.Message });
+            }
         }
 
     }

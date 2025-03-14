@@ -1,12 +1,88 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Git\\CQRSSemMediatR\\CQRSLiimpo\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0FDDB33D-2333-4783-BF05-6392FF2BBB32}|CQRSLiimpo.csproj|c:\\git\\cqrssemmediatr\\cqrsliimpo\\handlers\\commands\\updateusercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FDDB33D-2333-4783-BF05-6392FF2BBB32}|CQRSLiimpo.csproj|solutionrelative:handlers\\commands\\updateusercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FDDB33D-2333-4783-BF05-6392FF2BBB32}|CQRSLiimpo.csproj|c:\\git\\cqrssemmediatr\\cqrsliimpo\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FDDB33D-2333-4783-BF05-6392FF2BBB32}|CQRSLiimpo.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FDDB33D-2333-4783-BF05-6392FF2BBB32}|CQRSLiimpo.csproj|c:\\git\\cqrssemmediatr\\cqrsliimpo\\handlers\\getuserbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FDDB33D-2333-4783-BF05-6392FF2BBB32}|CQRSLiimpo.csproj|solutionrelative:handlers\\getuserbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FDDB33D-2333-4783-BF05-6392FF2BBB32}|CQRSLiimpo.csproj|c:\\git\\cqrssemmediatr\\cqrsliimpo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FDDB33D-2333-4783-BF05-6392FF2BBB32}|CQRSLiimpo.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetUserByIdQueryHandler.cs",
+              "DocumentMoniker": "C:\\Git\\CQRSSemMediatR\\CQRSLiimpo\\Handlers\\GetUserByIdQueryHandler.cs",
+              "RelativeDocumentMoniker": "Handlers\\GetUserByIdQueryHandler.cs",
+              "ToolTip": "C:\\Git\\CQRSSemMediatR\\CQRSLiimpo\\Handlers\\GetUserByIdQueryHandler.cs",
+              "RelativeToolTip": "Handlers\\GetUserByIdQueryHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T15:09:18.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Git\\CQRSSemMediatR\\CQRSLiimpo\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Git\\CQRSSemMediatR\\CQRSLiimpo\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAABrAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T20:51:45.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UpdateUserCommandHandler.cs",
+              "DocumentMoniker": "C:\\Git\\CQRSSemMediatR\\CQRSLiimpo\\Handlers\\Commands\\UpdateUserCommandHandler.cs",
+              "RelativeDocumentMoniker": "Handlers\\Commands\\UpdateUserCommandHandler.cs",
+              "ToolTip": "C:\\Git\\CQRSSemMediatR\\CQRSLiimpo\\Handlers\\Commands\\UpdateUserCommandHandler.cs",
+              "RelativeToolTip": "Handlers\\Commands\\UpdateUserCommandHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T20:49:43.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Git\\CQRSSemMediatR\\CQRSLiimpo\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Git\\CQRSSemMediatR\\CQRSLiimpo\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAAAE8AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T20:40:22.99Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
